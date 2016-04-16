@@ -55,7 +55,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.richTextBox = new System.Windows.Forms.RichTextBox();
             this.statBlock = new System.Windows.Forms.FlowLayoutPanel();
             this.statBlock_nameLabel = new System.Windows.Forms.Label();
             this.coreStatsLabel = new System.Windows.Forms.Label();
@@ -101,6 +100,7 @@
             this.advancementStats_goldLabel = new System.Windows.Forms.Label();
             this.advancementStats_goldValue = new System.Windows.Forms.Label();
             this.advancementStats_goldImage = new System.Windows.Forms.PictureBox();
+            this.mainPage = new System.Windows.Forms.WebBrowser();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -163,13 +163,13 @@
             // menuStrip1
             // 
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileMenu,
             this.helpMenu});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(108, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(101, 27);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -181,46 +181,51 @@
             this.file_loadGame,
             this.file_exit});
             this.fileMenu.Name = "fileMenu";
-            this.fileMenu.Size = new System.Drawing.Size(46, 25);
+            this.fileMenu.Size = new System.Drawing.Size(43, 23);
             this.fileMenu.Text = "File";
             // 
             // file_saveGame
             // 
             this.file_saveGame.Name = "file_saveGame";
             this.file_saveGame.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.file_saveGame.Size = new System.Drawing.Size(217, 26);
+            this.file_saveGame.Size = new System.Drawing.Size(203, 24);
             this.file_saveGame.Text = "Save Game";
+            this.file_saveGame.Click += new System.EventHandler(this.file_saveGame_Click);
             // 
             // file_quicksave
             // 
             this.file_quicksave.Name = "file_quicksave";
             this.file_quicksave.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.file_quicksave.Size = new System.Drawing.Size(217, 26);
+            this.file_quicksave.Size = new System.Drawing.Size(203, 24);
             this.file_quicksave.Text = "Quicksave";
+            this.file_quicksave.Click += new System.EventHandler(this.file_quicksave_Click);
             // 
             // file_loadGame
             // 
             this.file_loadGame.Name = "file_loadGame";
             this.file_loadGame.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.file_loadGame.Size = new System.Drawing.Size(217, 26);
+            this.file_loadGame.Size = new System.Drawing.Size(203, 24);
             this.file_loadGame.Text = "Load Game";
+            this.file_loadGame.Click += new System.EventHandler(this.file_loadGame_Click);
             // 
             // file_exit
             // 
             this.file_exit.Name = "file_exit";
             this.file_exit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.file_exit.Size = new System.Drawing.Size(217, 26);
+            this.file_exit.Size = new System.Drawing.Size(203, 24);
             this.file_exit.Text = "Exit";
+            this.file_exit.Click += new System.EventHandler(this.file_exit_Click);
             // 
             // helpMenu
             // 
             this.helpMenu.Name = "helpMenu";
-            this.helpMenu.Size = new System.Drawing.Size(54, 25);
+            this.helpMenu.Size = new System.Drawing.Size(50, 23);
             this.helpMenu.Text = "Help";
+            this.helpMenu.Click += new System.EventHandler(this.helpMenu_Click);
             // 
             // splitter1
             // 
-            this.splitter1.Location = new System.Drawing.Point(111, 3);
+            this.splitter1.Location = new System.Drawing.Point(104, 3);
             this.splitter1.Name = "splitter1";
             this.splitter1.Size = new System.Drawing.Size(25, 23);
             this.splitter1.TabIndex = 2;
@@ -228,13 +233,14 @@
             // 
             // autosaveToggle
             // 
-            this.autosaveToggle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.autosaveToggle.Location = new System.Drawing.Point(142, 3);
+            this.autosaveToggle.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.autosaveToggle.Location = new System.Drawing.Point(135, 3);
             this.autosaveToggle.Name = "autosaveToggle";
             this.autosaveToggle.Size = new System.Drawing.Size(130, 23);
             this.autosaveToggle.TabIndex = 3;
             this.autosaveToggle.Text = "Turn ON Autosave";
             this.autosaveToggle.UseVisualStyleBackColor = true;
+            this.autosaveToggle.Click += new System.EventHandler(this.autosaveToggle_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -273,7 +279,7 @@
             // 
             this.dateLabel.AutoSize = true;
             this.dateLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateLabel.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateLabel.Location = new System.Drawing.Point(53, 0);
             this.dateLabel.Name = "dateLabel";
             this.dateLabel.Size = new System.Drawing.Size(138, 43);
@@ -285,7 +291,7 @@
             // 
             this.timeLabel.AutoSize = true;
             this.timeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.timeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeLabel.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timeLabel.Location = new System.Drawing.Point(53, 43);
             this.timeLabel.Name = "timeLabel";
             this.timeLabel.Size = new System.Drawing.Size(138, 43);
@@ -323,112 +329,122 @@
             // button10
             // 
             this.button10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button10.Location = new System.Drawing.Point(543, 46);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(129, 37);
             this.button10.TabIndex = 9;
             this.button10.Text = "button10";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button9
             // 
             this.button9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.Location = new System.Drawing.Point(408, 46);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(129, 37);
             this.button9.TabIndex = 8;
             this.button9.Text = "button9";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button8
             // 
             this.button8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.Location = new System.Drawing.Point(273, 46);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(129, 37);
             this.button8.TabIndex = 7;
             this.button8.Text = "button8";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button7
             // 
             this.button7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.Location = new System.Drawing.Point(138, 46);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(129, 37);
             this.button7.TabIndex = 6;
             this.button7.Text = "button7";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button6
             // 
             this.button6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.Location = new System.Drawing.Point(3, 46);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(129, 37);
             this.button6.TabIndex = 5;
             this.button6.Text = "button6";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
             this.button5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.Location = new System.Drawing.Point(543, 3);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(129, 37);
             this.button5.TabIndex = 4;
             this.button5.Text = "button5";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
             this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Location = new System.Drawing.Point(408, 3);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(129, 37);
             this.button4.TabIndex = 3;
             this.button4.Text = "button4";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
             this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(273, 3);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(129, 37);
             this.button3.TabIndex = 2;
             this.button3.Text = "button3";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
             this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(138, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(129, 37);
             this.button2.TabIndex = 1;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
             this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(3, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(129, 37);
             this.button1.TabIndex = 0;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // tableLayoutPanel5
             // 
@@ -436,8 +452,8 @@
             this.tableLayoutPanel5.ColumnCount = 2;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Controls.Add(this.richTextBox, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.statBlock, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.mainPage, 1, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(4, 40);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -446,18 +462,6 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 440F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(884, 441);
             this.tableLayoutPanel5.TabIndex = 2;
-            // 
-            // richTextBox
-            // 
-            this.richTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox.Location = new System.Drawing.Point(205, 4);
-            this.richTextBox.Name = "richTextBox";
-            this.richTextBox.ReadOnly = true;
-            this.richTextBox.Size = new System.Drawing.Size(675, 433);
-            this.richTextBox.TabIndex = 0;
-            this.richTextBox.Text = "";
             // 
             // statBlock
             // 
@@ -484,7 +488,7 @@
             // 
             // statBlock_nameLabel
             // 
-            this.statBlock_nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statBlock_nameLabel.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.statBlock_nameLabel.Location = new System.Drawing.Point(3, 0);
             this.statBlock_nameLabel.Name = "statBlock_nameLabel";
             this.statBlock_nameLabel.Size = new System.Drawing.Size(191, 23);
@@ -493,7 +497,7 @@
             // 
             // coreStatsLabel
             // 
-            this.coreStatsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.coreStatsLabel.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.coreStatsLabel.Location = new System.Drawing.Point(3, 23);
             this.coreStatsLabel.Name = "coreStatsLabel";
             this.coreStatsLabel.Size = new System.Drawing.Size(191, 29);
@@ -521,7 +525,7 @@
             // 
             this.coreStats_strengthLabel.AutoSize = true;
             this.coreStats_strengthLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.coreStats_strengthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.coreStats_strengthLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.coreStats_strengthLabel.Location = new System.Drawing.Point(3, 0);
             this.coreStats_strengthLabel.Name = "coreStats_strengthLabel";
             this.coreStats_strengthLabel.Size = new System.Drawing.Size(116, 26);
@@ -533,7 +537,7 @@
             // 
             this.coreStats_strengthValue.AutoSize = true;
             this.coreStats_strengthValue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.coreStats_strengthValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.coreStats_strengthValue.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.coreStats_strengthValue.Location = new System.Drawing.Point(125, 0);
             this.coreStats_strengthValue.Name = "coreStats_strengthValue";
             this.coreStats_strengthValue.Size = new System.Drawing.Size(39, 26);
@@ -570,7 +574,7 @@
             // 
             this.coreStats_toughnessLabel.AutoSize = true;
             this.coreStats_toughnessLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.coreStats_toughnessLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.coreStats_toughnessLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.coreStats_toughnessLabel.Location = new System.Drawing.Point(3, 0);
             this.coreStats_toughnessLabel.Name = "coreStats_toughnessLabel";
             this.coreStats_toughnessLabel.Size = new System.Drawing.Size(116, 26);
@@ -582,7 +586,7 @@
             // 
             this.coreStats_toughnessValue.AutoSize = true;
             this.coreStats_toughnessValue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.coreStats_toughnessValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.coreStats_toughnessValue.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.coreStats_toughnessValue.Location = new System.Drawing.Point(125, 0);
             this.coreStats_toughnessValue.Name = "coreStats_toughnessValue";
             this.coreStats_toughnessValue.Size = new System.Drawing.Size(39, 26);
@@ -619,7 +623,7 @@
             // 
             this.coreStats_speedLabel.AutoSize = true;
             this.coreStats_speedLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.coreStats_speedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.coreStats_speedLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.coreStats_speedLabel.Location = new System.Drawing.Point(3, 0);
             this.coreStats_speedLabel.Name = "coreStats_speedLabel";
             this.coreStats_speedLabel.Size = new System.Drawing.Size(116, 26);
@@ -631,7 +635,7 @@
             // 
             this.coreStats_speedValue.AutoSize = true;
             this.coreStats_speedValue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.coreStats_speedValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.coreStats_speedValue.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.coreStats_speedValue.Location = new System.Drawing.Point(125, 0);
             this.coreStats_speedValue.Name = "coreStats_speedValue";
             this.coreStats_speedValue.Size = new System.Drawing.Size(39, 26);
@@ -668,7 +672,7 @@
             // 
             this.coreStats_accuracyLabel.AutoSize = true;
             this.coreStats_accuracyLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.coreStats_accuracyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.coreStats_accuracyLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.coreStats_accuracyLabel.Location = new System.Drawing.Point(3, 0);
             this.coreStats_accuracyLabel.Name = "coreStats_accuracyLabel";
             this.coreStats_accuracyLabel.Size = new System.Drawing.Size(116, 26);
@@ -680,7 +684,7 @@
             // 
             this.coreStats_accuracyValue.AutoSize = true;
             this.coreStats_accuracyValue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.coreStats_accuracyValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.coreStats_accuracyValue.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.coreStats_accuracyValue.Location = new System.Drawing.Point(125, 0);
             this.coreStats_accuracyValue.Name = "coreStats_accuracyValue";
             this.coreStats_accuracyValue.Size = new System.Drawing.Size(39, 26);
@@ -717,7 +721,7 @@
             // 
             this.coreStats_corruptionLabel.AutoSize = true;
             this.coreStats_corruptionLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.coreStats_corruptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.coreStats_corruptionLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.coreStats_corruptionLabel.Location = new System.Drawing.Point(3, 0);
             this.coreStats_corruptionLabel.Name = "coreStats_corruptionLabel";
             this.coreStats_corruptionLabel.Size = new System.Drawing.Size(116, 26);
@@ -729,7 +733,7 @@
             // 
             this.coreStats_corruptionValue.AutoSize = true;
             this.coreStats_corruptionValue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.coreStats_corruptionValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.coreStats_corruptionValue.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.coreStats_corruptionValue.Location = new System.Drawing.Point(125, 0);
             this.coreStats_corruptionValue.Name = "coreStats_corruptionValue";
             this.coreStats_corruptionValue.Size = new System.Drawing.Size(39, 26);
@@ -748,7 +752,7 @@
             // 
             // combatStatsLabel
             // 
-            this.combatStatsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.combatStatsLabel.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combatStatsLabel.Location = new System.Drawing.Point(3, 212);
             this.combatStatsLabel.Name = "combatStatsLabel";
             this.combatStatsLabel.Size = new System.Drawing.Size(191, 29);
@@ -776,7 +780,7 @@
             // 
             this.combatStats_hpLabel.AutoSize = true;
             this.combatStats_hpLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.combatStats_hpLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.combatStats_hpLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combatStats_hpLabel.Location = new System.Drawing.Point(3, 0);
             this.combatStats_hpLabel.Name = "combatStats_hpLabel";
             this.combatStats_hpLabel.Size = new System.Drawing.Size(116, 26);
@@ -788,7 +792,7 @@
             // 
             this.combatStats_hpValue.AutoSize = true;
             this.combatStats_hpValue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.combatStats_hpValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.combatStats_hpValue.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combatStats_hpValue.Location = new System.Drawing.Point(125, 0);
             this.combatStats_hpValue.Name = "combatStats_hpValue";
             this.combatStats_hpValue.Size = new System.Drawing.Size(39, 26);
@@ -825,7 +829,7 @@
             // 
             this.combatStats_fatigueLabel.AutoSize = true;
             this.combatStats_fatigueLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.combatStats_fatigueLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.combatStats_fatigueLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combatStats_fatigueLabel.Location = new System.Drawing.Point(3, 0);
             this.combatStats_fatigueLabel.Name = "combatStats_fatigueLabel";
             this.combatStats_fatigueLabel.Size = new System.Drawing.Size(116, 26);
@@ -837,7 +841,7 @@
             // 
             this.combatStats_fatigueValue.AutoSize = true;
             this.combatStats_fatigueValue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.combatStats_fatigueValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.combatStats_fatigueValue.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combatStats_fatigueValue.Location = new System.Drawing.Point(125, 0);
             this.combatStats_fatigueValue.Name = "combatStats_fatigueValue";
             this.combatStats_fatigueValue.Size = new System.Drawing.Size(39, 26);
@@ -856,7 +860,7 @@
             // 
             // advancementStatsLabel
             // 
-            this.advancementStatsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.advancementStatsLabel.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.advancementStatsLabel.Location = new System.Drawing.Point(3, 305);
             this.advancementStatsLabel.Name = "advancementStatsLabel";
             this.advancementStatsLabel.Size = new System.Drawing.Size(191, 29);
@@ -884,7 +888,7 @@
             // 
             this.advancementStats_levelLabel.AutoSize = true;
             this.advancementStats_levelLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.advancementStats_levelLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.advancementStats_levelLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.advancementStats_levelLabel.Location = new System.Drawing.Point(3, 0);
             this.advancementStats_levelLabel.Name = "advancementStats_levelLabel";
             this.advancementStats_levelLabel.Size = new System.Drawing.Size(116, 26);
@@ -896,7 +900,7 @@
             // 
             this.advancementStats_levelValue.AutoSize = true;
             this.advancementStats_levelValue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.advancementStats_levelValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.advancementStats_levelValue.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.advancementStats_levelValue.Location = new System.Drawing.Point(125, 0);
             this.advancementStats_levelValue.Name = "advancementStats_levelValue";
             this.advancementStats_levelValue.Size = new System.Drawing.Size(39, 26);
@@ -933,7 +937,7 @@
             // 
             this.advancementStats_xpLabel.AutoSize = true;
             this.advancementStats_xpLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.advancementStats_xpLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.advancementStats_xpLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.advancementStats_xpLabel.Location = new System.Drawing.Point(3, 0);
             this.advancementStats_xpLabel.Name = "advancementStats_xpLabel";
             this.advancementStats_xpLabel.Size = new System.Drawing.Size(116, 26);
@@ -945,7 +949,7 @@
             // 
             this.advancementStats_xpValue.AutoSize = true;
             this.advancementStats_xpValue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.advancementStats_xpValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.advancementStats_xpValue.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.advancementStats_xpValue.Location = new System.Drawing.Point(125, 0);
             this.advancementStats_xpValue.Name = "advancementStats_xpValue";
             this.advancementStats_xpValue.Size = new System.Drawing.Size(39, 26);
@@ -982,7 +986,7 @@
             // 
             this.advancementStats_goldLabel.AutoSize = true;
             this.advancementStats_goldLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.advancementStats_goldLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.advancementStats_goldLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.advancementStats_goldLabel.Location = new System.Drawing.Point(3, 0);
             this.advancementStats_goldLabel.Name = "advancementStats_goldLabel";
             this.advancementStats_goldLabel.Size = new System.Drawing.Size(116, 26);
@@ -994,7 +998,7 @@
             // 
             this.advancementStats_goldValue.AutoSize = true;
             this.advancementStats_goldValue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.advancementStats_goldValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.advancementStats_goldValue.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.advancementStats_goldValue.Location = new System.Drawing.Point(125, 0);
             this.advancementStats_goldValue.Name = "advancementStats_goldValue";
             this.advancementStats_goldValue.Size = new System.Drawing.Size(39, 26);
@@ -1010,6 +1014,15 @@
             this.advancementStats_goldImage.Size = new System.Drawing.Size(19, 20);
             this.advancementStats_goldImage.TabIndex = 2;
             this.advancementStats_goldImage.TabStop = false;
+            // 
+            // mainPage
+            // 
+            this.mainPage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPage.Location = new System.Drawing.Point(205, 4);
+            this.mainPage.MinimumSize = new System.Drawing.Size(20, 20);
+            this.mainPage.Name = "mainPage";
+            this.mainPage.Size = new System.Drawing.Size(675, 433);
+            this.mainPage.TabIndex = 2;
             // 
             // MindlessLump_LD35
             // 
@@ -1095,7 +1108,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.RichTextBox richTextBox;
         private System.Windows.Forms.FlowLayoutPanel statBlock;
         private System.Windows.Forms.Label statBlock_nameLabel;
         private System.Windows.Forms.Label coreStatsLabel;
@@ -1141,6 +1153,7 @@
         private System.Windows.Forms.Label advancementStats_goldLabel;
         private System.Windows.Forms.Label advancementStats_goldValue;
         private System.Windows.Forms.PictureBox advancementStats_goldImage;
+        private System.Windows.Forms.WebBrowser mainPage;
     }
 }
 

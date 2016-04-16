@@ -14,9 +14,9 @@ namespace LD35
     {
         // Events triggered by the GUI that must be handled by the Controller
         // View -> Controller
-        event Action SaveEvent;
+        event Action<string> SaveEvent;
         event Action QuicksaveEvent;
-        event Action LoadEvent;
+        event Action<string> LoadEvent;
         event Action ExitEvent;
         event Action HelpEvent;
         event Action ToggleAutosaveEvent;
@@ -35,15 +35,18 @@ namespace LD35
         // Controller -> View
         string AutosaveButtonText { get; set; }
         string PlayerName { get; set; }
-        string RichText { get; set; }
-        int GameDate { get; set; }
-        int GameTime { get; set; }
+        string MainText { get; set; }
+        string Message { set; }
 
         // Methods implemented by the GUI that can be called by the Controller
         // Controller -> View
+        DialogResult Warning(string message);
+        void DoClose();
         void UpdateCoreStats(string[] newInfo);
         void UpdateCombatStats(string[] newInfo);
         void UpdateAdvancementStats(string[] newInfo);
         void UpdateButtonText(string[] newInfo);
+        void UpdateGameDateTime(string[] newInfo);
+        string GetSaveFile();
     }
 }
