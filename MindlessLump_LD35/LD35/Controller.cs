@@ -20,6 +20,7 @@ namespace LD35
         private static bool autosaveOn = false;
         private static string previousFile = "";
         private static string currLoc = "";
+        private static Dictionary<string, string> descriptors = new Dictionary<string, string>();
 
         public Controller (IView w)
         {
@@ -27,6 +28,7 @@ namespace LD35
             window = w;
 
             // Setup menu page
+            descriptors.Add("@Theme", "<b>Shapeshift</b>");
             window.MainText = GetStringFromFile("main.html");
             window.UpdateCoreStats(coreStatInfo);
             window.AutosaveButtonText = "Turn Autosave ON";
@@ -191,7 +193,7 @@ namespace LD35
 
         public string GetStringFromFile(string file)
         {
-            StringBuilder build = new StringBuilder();
+            StringBuilder builder = new StringBuilder();
             currLoc = file;
             int fileSection = 0;
             int buttonNum = -1;
@@ -209,8 +211,37 @@ namespace LD35
                     }
                     else
                     {
-                        // TODO replace parts of the string (identified by an '@') with descriptors
-                        build.Append(s);
+                        // Replace parts of the string (identified by an '@') with descriptors
+                        if (s.Contains("@"))
+                        {
+                            string[] parts1 = s.Split('@');
+                            for (int j = 1; j < parts1.Length; j++)
+                            {
+                                string[] parts2 = parts1[j].Split(' ', ',', '.', ';', ':', '?', '!', '/', '\\', '<', '\n', '\t', '\r');
+                                if (parts2[0] != null && parts2[0] != "")
+                                {
+                                    string wordToBeReplaced = parts2[0];
+                                    string replacement = "";
+                                    if (descriptors.TryGetValue("@" + wordToBeReplaced, out replacement))
+                                    {
+                                        builder.Append(s);
+                                        builder.Replace("@" + wordToBeReplaced, replacement);
+                                    }
+                                    else
+                                    {
+                                        builder.Append(s);
+                                    }
+                                }
+                                else
+                                {
+                                    builder.Append(s);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            builder.Append(s);
+                        }
                     }
                 }
                 // Button section (text and destination)
@@ -252,7 +283,7 @@ namespace LD35
                     // TODO parse stat changes
                 }
             }
-            return build.ToString();
+            return builder.ToString();
         }
 
         public void SaveToFile(string file)
