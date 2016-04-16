@@ -86,25 +86,45 @@ namespace LD35
             {
                 coreStats_strengthImage.Image = Image.FromFile(newInfo[1]);
             }
+            else
+            {
+                coreStats_strengthImage.Image = coreStats_strengthImage.InitialImage;
+            }
             coreStats_toughnessValue.Text = newInfo[2];
             if (newInfo[3] != "")
             {
                 coreStats_toughnessImage.Image = Image.FromFile(newInfo[3]);
+            }
+            else
+            {
+                coreStats_toughnessImage.Image = coreStats_toughnessImage.InitialImage;
             }
             coreStats_speedValue.Text = newInfo[4];
             if (newInfo[5] != "")
             {
                 coreStats_speedImage.Image = Image.FromFile(newInfo[5]);
             }
+            else
+            {
+                coreStats_speedImage.Image = coreStats_speedImage.InitialImage;
+            }
             coreStats_accuracyValue.Text = newInfo[6];
             if (newInfo[7] != "")
             {
                 coreStats_accuracyImage.Image = Image.FromFile(newInfo[7]);
             }
+            else
+            {
+                coreStats_accuracyImage.Image = coreStats_accuracyImage.InitialImage;
+            }
             coreStats_corruptionValue.Text = newInfo[8];
             if (newInfo[9] != "")
             {
                 coreStats_corruptionImage.Image = Image.FromFile(newInfo[9]);
+            }
+            else
+            {
+                coreStats_corruptionImage.Image = coreStats_corruptionImage.InitialImage;
             }
         }
 
@@ -123,10 +143,18 @@ namespace LD35
             {
                 combatStats_hpImage.Image = Image.FromFile(newInfo[1]);
             }
+            else
+            {
+                combatStats_hpImage.Image = combatStats_hpImage.InitialImage;
+            }
             combatStats_fatigueValue.Text = newInfo[2];
             if (newInfo[3] != "")
             {
                 combatStats_fatigueImage.Image = Image.FromFile(newInfo[3]);
+            }
+            else
+            {
+                combatStats_fatigueImage.Image = combatStats_fatigueImage.InitialImage;
             }
         }
 
@@ -145,15 +173,27 @@ namespace LD35
             {
                 advancementStats_levelImage.Image = Image.FromFile(newInfo[1]);
             }
+            else
+            {
+                advancementStats_levelImage.Image = advancementStats_levelImage.InitialImage;
+            }
             advancementStats_xpValue.Text = newInfo[2];
             if (newInfo[3] != "")
             {
                 advancementStats_xpImage.Image = Image.FromFile(newInfo[3]);
             }
+            else
+            {
+                advancementStats_xpImage.Image = advancementStats_xpImage.InitialImage;
+            }
             advancementStats_goldValue.Text = newInfo[4];
             if (newInfo[5] != "")
             {
                 advancementStats_goldImage.Image = Image.FromFile(newInfo[5]);
+            }
+            else
+            {
+                advancementStats_goldImage.Image = advancementStats_goldImage.InitialImage;
             }
         }
 

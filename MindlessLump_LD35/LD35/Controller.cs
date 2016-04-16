@@ -191,8 +191,29 @@ namespace LD35
             }
         }
 
+        private void ClearStatImages()
+        {
+            coreStatInfo[1] = "";
+            coreStatInfo[3] = "";
+            coreStatInfo[5] = "";
+            coreStatInfo[7] = "";
+            coreStatInfo[9] = "";
+            window.UpdateCoreStats(coreStatInfo);
+
+            combatStatInfo[1] = "";
+            combatStatInfo[3] = "";
+            window.UpdateCombatStats(combatStatInfo);
+
+            advancementStatInfo[1] = "";
+            advancementStatInfo[3] = "";
+            advancementStatInfo[5] = "";
+            window.UpdateAdvancementStats(advancementStatInfo);
+        }
+
         public string GetStringFromFile(string file)
         {
+            ClearStatImages();
+
             StringBuilder builder = new StringBuilder();
             currLoc = file;
             int fileSection = 0;

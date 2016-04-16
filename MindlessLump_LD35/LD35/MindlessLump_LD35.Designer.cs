@@ -285,7 +285,7 @@
             this.dateLabel.Size = new System.Drawing.Size(138, 43);
             this.dateLabel.TabIndex = 0;
             this.dateLabel.Text = "Date #: 1";
-            this.dateLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.dateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // timeLabel
             // 
@@ -297,7 +297,6 @@
             this.timeLabel.Size = new System.Drawing.Size(138, 43);
             this.timeLabel.TabIndex = 1;
             this.timeLabel.Text = "Time: 6:00";
-            this.timeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tableLayoutPanel4
             // 
@@ -548,6 +547,7 @@
             // coreStats_strengthImage
             // 
             this.coreStats_strengthImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.coreStats_strengthImage.InitialImage = null;
             this.coreStats_strengthImage.Location = new System.Drawing.Point(169, 3);
             this.coreStats_strengthImage.Name = "coreStats_strengthImage";
             this.coreStats_strengthImage.Size = new System.Drawing.Size(20, 20);
@@ -598,6 +598,7 @@
             // coreStats_toughnessImage
             // 
             this.coreStats_toughnessImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.coreStats_toughnessImage.InitialImage = null;
             this.coreStats_toughnessImage.Location = new System.Drawing.Point(169, 3);
             this.coreStats_toughnessImage.Name = "coreStats_toughnessImage";
             this.coreStats_toughnessImage.Size = new System.Drawing.Size(20, 20);
@@ -647,6 +648,7 @@
             // coreStats_speedImage
             // 
             this.coreStats_speedImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.coreStats_speedImage.InitialImage = null;
             this.coreStats_speedImage.Location = new System.Drawing.Point(169, 3);
             this.coreStats_speedImage.Name = "coreStats_speedImage";
             this.coreStats_speedImage.Size = new System.Drawing.Size(20, 20);
@@ -696,6 +698,7 @@
             // coreStats_accuracyImage
             // 
             this.coreStats_accuracyImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.coreStats_accuracyImage.InitialImage = null;
             this.coreStats_accuracyImage.Location = new System.Drawing.Point(169, 3);
             this.coreStats_accuracyImage.Name = "coreStats_accuracyImage";
             this.coreStats_accuracyImage.Size = new System.Drawing.Size(20, 20);
@@ -745,6 +748,7 @@
             // coreStats_corruptionImage
             // 
             this.coreStats_corruptionImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.coreStats_corruptionImage.InitialImage = null;
             this.coreStats_corruptionImage.Location = new System.Drawing.Point(169, 3);
             this.coreStats_corruptionImage.Name = "coreStats_corruptionImage";
             this.coreStats_corruptionImage.Size = new System.Drawing.Size(20, 20);
@@ -804,6 +808,7 @@
             // combatStats_hpImage
             // 
             this.combatStats_hpImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.combatStats_hpImage.InitialImage = null;
             this.combatStats_hpImage.Location = new System.Drawing.Point(169, 3);
             this.combatStats_hpImage.Name = "combatStats_hpImage";
             this.combatStats_hpImage.Size = new System.Drawing.Size(20, 20);
@@ -853,6 +858,7 @@
             // combatStats_fatigueImage
             // 
             this.combatStats_fatigueImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.combatStats_fatigueImage.InitialImage = null;
             this.combatStats_fatigueImage.Location = new System.Drawing.Point(169, 3);
             this.combatStats_fatigueImage.Name = "combatStats_fatigueImage";
             this.combatStats_fatigueImage.Size = new System.Drawing.Size(20, 20);
@@ -912,6 +918,7 @@
             // advancementStats_levelImage
             // 
             this.advancementStats_levelImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.advancementStats_levelImage.InitialImage = null;
             this.advancementStats_levelImage.Location = new System.Drawing.Point(169, 3);
             this.advancementStats_levelImage.Name = "advancementStats_levelImage";
             this.advancementStats_levelImage.Size = new System.Drawing.Size(20, 20);
@@ -961,6 +968,7 @@
             // advancementStats_xpImage
             // 
             this.advancementStats_xpImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.advancementStats_xpImage.InitialImage = null;
             this.advancementStats_xpImage.Location = new System.Drawing.Point(169, 3);
             this.advancementStats_xpImage.Name = "advancementStats_xpImage";
             this.advancementStats_xpImage.Size = new System.Drawing.Size(20, 20);
@@ -1010,6 +1018,7 @@
             // advancementStats_goldImage
             // 
             this.advancementStats_goldImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.advancementStats_goldImage.InitialImage = null;
             this.advancementStats_goldImage.Location = new System.Drawing.Point(169, 3);
             this.advancementStats_goldImage.Name = "advancementStats_goldImage";
             this.advancementStats_goldImage.Size = new System.Drawing.Size(20, 20);
