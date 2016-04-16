@@ -26,7 +26,7 @@ namespace LD35
             window = w;
 
             // Setup menu page
-            window.MainText = GetStringFromFile("   main.html");
+            window.MainText = GetStringFromFile("main.html");
             window.UpdateCoreStats(coreStatInfo);
             window.AutosaveButtonText = "Turn Autosave ON";
 
@@ -186,7 +186,15 @@ namespace LD35
                         buttonNum = int.Parse(s.Split('>')[0].Substring(7)) - 1;
                         parseLine = 0;
                     }
-                    else if (!s.Contains("</button"))
+                    else if (s.Contains("</button"))
+                    {
+                        parseLine = -1;
+                    }
+                    else if (s.Contains("<stats>"))
+                    {
+                        fileSection = 2;
+                    }
+                    else
                     {
                         if (parseLine == 0)
                         {
@@ -201,14 +209,6 @@ namespace LD35
                         {
                             throw new IOException("File not parsing correctly.");
                         }
-                    }
-                    else if (s.Contains("</button"))
-                    {
-                        parseLine = -1;
-                    }
-                    else if (s.Contains("<stats>"))
-                    {
-                        fileSection = 2;
                     }
                 }
                 // Stat section (changes)
