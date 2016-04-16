@@ -14,7 +14,7 @@ namespace LD35
         private static string[] coreStatInfo = { "0", "", "0", "", "0", "", "0", "", "0", "" };
         private static string[] combatStatInfo = { "0", "", "0", "" };
         private static string[] advancementStatInfo = { "0", "", "0", "", "0", "" };
-        private static string[] dateTimeInfo = { "0", "0" };
+        private static string[] dateTimeInfo = { "Day #:\t0", "Time:\t0:00" };
         private static string[] buttonInfo = { "", "", "", "", "", "", "", "", "", "" };
         private static string[] buttonDest = { "", "", "", "", "", "", "", "", "", "" };
         private static bool autosaveOn = false;
@@ -314,6 +314,7 @@ namespace LD35
                     }
                     else
                     {
+                        // Core stats
                         if (parseLine == 0)
                         {
                             string[] data = s.Trim().Split(':');
@@ -346,6 +347,88 @@ namespace LD35
                             {
                                 coreStatInfo[statNum + 1] = "../../Files/up.bmp";
                             }
+                            coreChanged = true;
+                        }
+                        // Combat stats
+                        else if (parseLine == 1)
+                        {
+                            string[] data = s.Trim().Split(':');
+                            int statNum = -1;
+                            switch (data[0])
+                            {
+                                case "Health":
+                                    statNum = 0;
+                                    break;
+                                case "Fatigue":
+                                    statNum = 2;
+                                    break;
+                            }
+                            int change = int.Parse(data[1]);
+                            combatStatInfo[statNum] = (int.Parse(combatStatInfo[statNum]) + change).ToString();
+                            if (change < 0)
+                            {
+                                combatStatInfo[statNum + 1] = "../../Files/down.bmp";
+                            }
+                            else
+                            {
+                                combatStatInfo[statNum + 1] = "../../Files/up.bmp";
+                            }
+                            combatChanged = true;
+                        }
+                        // Advancement stats
+                        else if (parseLine == 2)
+                        {
+                            string[] data = s.Trim().Split(':');
+                            int statNum = -1;
+                            switch (data[0])
+                            {
+                                case "Level":
+                                    statNum = 0;
+                                    break;
+                                case "Experience":
+                                    statNum = 2;
+                                    break;
+                                case "Gold":
+                                    statNum = 4;
+                                    break;
+                            }
+                            int change = int.Parse(data[1]);
+                            advancementStatInfo[statNum] = (int.Parse(advancementStatInfo[statNum]) + change).ToString();
+                            if (change < 0)
+                            {
+                                advancementStatInfo[statNum + 1] = "../../Files/down.bmp";
+                            }
+                            else
+                            {
+                                advancementStatInfo[statNum + 1] = "../../Files/up.bmp";
+                            }
+                            advancementChanged = true;
+                        }
+                        // Date/Time stats
+                        else if (parseLine == 3)
+                        {
+                            string[] data = s.Trim().Split(':');
+                            if (data[0] == "Time")
+                            {
+                                int change = int.Parse(data[1]);
+                                string[] timeData = dateTimeInfo[1].Split(':');
+                                int newTime = int.Parse(timeData[1].Substring(1)) + change;
+
+                                if (newTime > 23)
+                                {
+                                    newTime %= 24;
+                                    string[] dateData = dateTimeInfo[0].Split(':');
+                                    int newDate = int.Parse(dateData[1].Substring(1)) + 1;
+                                    dateTimeInfo[0] = "Day #: " + newDate;
+                                }
+                                dateTimeInfo[1] = "Time: " + newTime + ":00";
+                            }
+                            dateTimeChanged = true;
+                        }
+                        // Hidden stats
+                        else if (parseLine == 4)
+                        {
+                            // TODO
                         }
                     }
                 }
