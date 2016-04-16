@@ -207,7 +207,7 @@ namespace LD35
 
         private void button10_Click(object sender, EventArgs e)
         {
-            Button10Event?.Invoke();
+
         }
 
         private void MindlessLump_LD35_KeyDown(object sender, KeyEventArgs e)

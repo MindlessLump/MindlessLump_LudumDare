@@ -16,6 +16,7 @@ namespace LD35
         private static string[] advancementStatInfo = { "", "", "", "", "", "" };
         private static string[] dateTimeInfo = { "", "" };
         private static string[] buttonInfo = { "", "", "", "", "", "", "", "", "", "" };
+        private static string[] buttonDest = { "", "", "", "", "", "", "", "", "", "" };
         private static bool autosaveOn = false;
         private static string previousFile = "";
 
@@ -25,7 +26,7 @@ namespace LD35
             window = w;
 
             // Setup menu page
-            window.MainText = GetStringFromFile("main.html");
+            window.MainText = GetStringFromFile("   main.html");
             window.UpdateCoreStats(coreStatInfo);
             window.AutosaveButtonText = "Turn Autosave ON";
 
@@ -88,12 +89,20 @@ namespace LD35
 
         private void HelpEventHandler()
         {
-            // TOOD
+            // TODO
         }
 
         private void ToggleAutosaveEventHandler()
         {
-            // TODO
+            autosaveOn = !autosaveOn;
+            if (autosaveOn)
+            {
+                window.AutosaveButtonText = "Turn Autosave OFF";
+            }
+            else
+            {
+                window.AutosaveButtonText = "Turn Autosave ON";
+            }
         }
 
         private void Button1EventHandler()
@@ -149,9 +158,64 @@ namespace LD35
         public string GetStringFromFile(string file)
         {
             StringBuilder build = new StringBuilder();
+            int fileSection = 0;
+            int buttonNum = -1;
+            int parseLine = -1;
             foreach (string s in File.ReadLines("../../Files/" + file))
             {
-                build.Append(s);
+                // HTML section (the part that displays)
+                if (fileSection == 0)
+                {
+                    if (s.Contains("<button"))
+                    {
+                        fileSection = 1;
+                        buttonNum = int.Parse(s.Split('>')[0].Substring(7)) - 1;
+                        parseLine = 0;
+                    }
+                    else
+                    {
+                        // TODO replace parts of the string (identified by an '@') with descriptors
+                        build.Append(s);
+                    }
+                }
+                // Button section (text and destination)
+                else if (fileSection == 1)
+                {
+                    if (s.Contains("<button"))
+                    {
+                        buttonNum = int.Parse(s.Split('>')[0].Substring(7)) - 1;
+                        parseLine = 0;
+                    }
+                    else if (!s.Contains("</button"))
+                    {
+                        if (parseLine == 0)
+                        {
+                            buttonInfo[buttonNum] = s.Trim();
+                            parseLine = 1;
+                        }
+                        else if (parseLine == 1)
+                        {
+                            buttonDest[buttonNum] = s.Trim();
+                        }
+                        else
+                        {
+                            throw new IOException("File not parsing correctly.");
+                        }
+                    }
+                    else if (s.Contains("</button"))
+                    {
+                        parseLine = -1;
+                    }
+                    else if (s.Contains("<stats>"))
+                    {
+                        fileSection = 2;
+                    }
+                }
+                // Stat section (changes)
+                else if (fileSection == 2)
+                {
+                    // TODO parse stat changes
+                }
             }
             return build.ToString();
         }

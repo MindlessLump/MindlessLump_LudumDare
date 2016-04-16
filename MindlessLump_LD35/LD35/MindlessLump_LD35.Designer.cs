@@ -1033,7 +1033,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MindlessLump_LD35";
-            this.Text = "Form1";
+            this.Text = "MindlessLump: LD35 (Shapeshift)";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
