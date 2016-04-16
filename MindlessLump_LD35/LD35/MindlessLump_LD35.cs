@@ -82,15 +82,30 @@ namespace LD35
                 throw new ArgumentException("String array wrong size.");
             }
             coreStats_strengthValue.Text = newInfo[0];
-            coreStats_strengthImage.ImageLocation = newInfo[1];
+            if (newInfo[1] != "")
+            {
+                coreStats_strengthImage.Image = Image.FromFile(newInfo[1]);
+            }
             coreStats_toughnessValue.Text = newInfo[2];
-            coreStats_toughnessImage.ImageLocation = newInfo[3];
+            if (newInfo[3] != "")
+            {
+                coreStats_toughnessImage.Image = Image.FromFile(newInfo[3]);
+            }
             coreStats_speedValue.Text = newInfo[4];
-            coreStats_speedImage.ImageLocation = newInfo[5];
+            if (newInfo[5] != "")
+            {
+                coreStats_speedImage.Image = Image.FromFile(newInfo[5]);
+            }
             coreStats_accuracyValue.Text = newInfo[6];
-            coreStats_accuracyImage.ImageLocation = newInfo[7];
+            if (newInfo[7] != "")
+            {
+                coreStats_accuracyImage.Image = Image.FromFile(newInfo[7]);
+            }
             coreStats_corruptionValue.Text = newInfo[8];
-            coreStats_corruptionImage.ImageLocation = newInfo[9];
+            if (newInfo[9] != "")
+            {
+                coreStats_corruptionImage.Image = Image.FromFile(newInfo[9]);
+            }
         }
 
         public void UpdateCombatStats(string[] newInfo)
@@ -104,9 +119,15 @@ namespace LD35
                 throw new ArgumentException("String array wrong size.");
             }
             combatStats_hpValue.Text = newInfo[0];
-            combatStats_hpImage.ImageLocation = newInfo[1];
+            if (newInfo[1] != "")
+            {
+                combatStats_hpImage.Image = Image.FromFile(newInfo[1]);
+            }
             combatStats_fatigueValue.Text = newInfo[2];
-            combatStats_fatigueImage.ImageLocation = newInfo[3];
+            if (newInfo[3] != "")
+            {
+                combatStats_fatigueImage.Image = Image.FromFile(newInfo[3]);
+            }
         }
 
         public void UpdateAdvancementStats(string[] newInfo)
@@ -120,11 +141,20 @@ namespace LD35
                 throw new ArgumentException("String array wrong size.");
             }
             advancementStats_levelValue.Text = newInfo[0];
-            advancementStats_levelImage.ImageLocation = newInfo[1];
+            if (newInfo[1] != "")
+            {
+                advancementStats_levelImage.Image = Image.FromFile(newInfo[1]);
+            }
             advancementStats_xpValue.Text = newInfo[2];
-            advancementStats_xpImage.ImageLocation = newInfo[3];
+            if (newInfo[3] != "")
+            {
+                advancementStats_xpImage.Image = Image.FromFile(newInfo[3]);
+            }
             advancementStats_goldValue.Text = newInfo[4];
-            advancementStats_goldImage.ImageLocation = newInfo[5];
+            if (newInfo[5] != "")
+            {
+                advancementStats_goldImage.Image = Image.FromFile(newInfo[5]);
+            }
         }
 
         public void UpdateButtonText(string[] newInfo)

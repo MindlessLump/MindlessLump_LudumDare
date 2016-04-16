@@ -510,7 +510,7 @@
             this.coreStats_strength.ColumnCount = 3;
             this.coreStats_strength.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.coreStats_strength.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.coreStats_strength.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.coreStats_strength.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.coreStats_strength.Controls.Add(this.coreStats_strengthLabel, 0, 0);
             this.coreStats_strength.Controls.Add(this.coreStats_strengthValue, 1, 0);
             this.coreStats_strength.Controls.Add(this.coreStats_strengthImage, 2, 0);
@@ -528,7 +528,7 @@
             this.coreStats_strengthLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.coreStats_strengthLabel.Location = new System.Drawing.Point(3, 0);
             this.coreStats_strengthLabel.Name = "coreStats_strengthLabel";
-            this.coreStats_strengthLabel.Size = new System.Drawing.Size(116, 26);
+            this.coreStats_strengthLabel.Size = new System.Drawing.Size(115, 26);
             this.coreStats_strengthLabel.TabIndex = 0;
             this.coreStats_strengthLabel.Text = "Strength:";
             this.coreStats_strengthLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -538,7 +538,7 @@
             this.coreStats_strengthValue.AutoSize = true;
             this.coreStats_strengthValue.Dock = System.Windows.Forms.DockStyle.Fill;
             this.coreStats_strengthValue.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.coreStats_strengthValue.Location = new System.Drawing.Point(125, 0);
+            this.coreStats_strengthValue.Location = new System.Drawing.Point(124, 0);
             this.coreStats_strengthValue.Name = "coreStats_strengthValue";
             this.coreStats_strengthValue.Size = new System.Drawing.Size(39, 26);
             this.coreStats_strengthValue.TabIndex = 1;
@@ -548,9 +548,10 @@
             // coreStats_strengthImage
             // 
             this.coreStats_strengthImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.coreStats_strengthImage.Location = new System.Drawing.Point(170, 3);
+            this.coreStats_strengthImage.Location = new System.Drawing.Point(169, 3);
             this.coreStats_strengthImage.Name = "coreStats_strengthImage";
-            this.coreStats_strengthImage.Size = new System.Drawing.Size(19, 20);
+            this.coreStats_strengthImage.Size = new System.Drawing.Size(20, 20);
+            this.coreStats_strengthImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.coreStats_strengthImage.TabIndex = 2;
             this.coreStats_strengthImage.TabStop = false;
             // 
@@ -559,7 +560,7 @@
             this.coreStats_toughness.ColumnCount = 3;
             this.coreStats_toughness.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.coreStats_toughness.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.coreStats_toughness.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.coreStats_toughness.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.coreStats_toughness.Controls.Add(this.coreStats_toughnessLabel, 0, 0);
             this.coreStats_toughness.Controls.Add(this.coreStats_toughnessValue, 1, 0);
             this.coreStats_toughness.Controls.Add(this.coreStats_toughnessImage, 2, 0);
@@ -577,7 +578,7 @@
             this.coreStats_toughnessLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.coreStats_toughnessLabel.Location = new System.Drawing.Point(3, 0);
             this.coreStats_toughnessLabel.Name = "coreStats_toughnessLabel";
-            this.coreStats_toughnessLabel.Size = new System.Drawing.Size(116, 26);
+            this.coreStats_toughnessLabel.Size = new System.Drawing.Size(115, 26);
             this.coreStats_toughnessLabel.TabIndex = 0;
             this.coreStats_toughnessLabel.Text = "Toughness:";
             this.coreStats_toughnessLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -587,7 +588,7 @@
             this.coreStats_toughnessValue.AutoSize = true;
             this.coreStats_toughnessValue.Dock = System.Windows.Forms.DockStyle.Fill;
             this.coreStats_toughnessValue.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.coreStats_toughnessValue.Location = new System.Drawing.Point(125, 0);
+            this.coreStats_toughnessValue.Location = new System.Drawing.Point(124, 0);
             this.coreStats_toughnessValue.Name = "coreStats_toughnessValue";
             this.coreStats_toughnessValue.Size = new System.Drawing.Size(39, 26);
             this.coreStats_toughnessValue.TabIndex = 1;
@@ -597,9 +598,9 @@
             // coreStats_toughnessImage
             // 
             this.coreStats_toughnessImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.coreStats_toughnessImage.Location = new System.Drawing.Point(170, 3);
+            this.coreStats_toughnessImage.Location = new System.Drawing.Point(169, 3);
             this.coreStats_toughnessImage.Name = "coreStats_toughnessImage";
-            this.coreStats_toughnessImage.Size = new System.Drawing.Size(19, 20);
+            this.coreStats_toughnessImage.Size = new System.Drawing.Size(20, 20);
             this.coreStats_toughnessImage.TabIndex = 2;
             this.coreStats_toughnessImage.TabStop = false;
             // 
@@ -608,7 +609,7 @@
             this.coreStats_speed.ColumnCount = 3;
             this.coreStats_speed.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.coreStats_speed.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.coreStats_speed.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.coreStats_speed.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.coreStats_speed.Controls.Add(this.coreStats_speedLabel, 0, 0);
             this.coreStats_speed.Controls.Add(this.coreStats_speedValue, 1, 0);
             this.coreStats_speed.Controls.Add(this.coreStats_speedImage, 2, 0);
@@ -626,7 +627,7 @@
             this.coreStats_speedLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.coreStats_speedLabel.Location = new System.Drawing.Point(3, 0);
             this.coreStats_speedLabel.Name = "coreStats_speedLabel";
-            this.coreStats_speedLabel.Size = new System.Drawing.Size(116, 26);
+            this.coreStats_speedLabel.Size = new System.Drawing.Size(115, 26);
             this.coreStats_speedLabel.TabIndex = 0;
             this.coreStats_speedLabel.Text = "Speed:";
             this.coreStats_speedLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -636,7 +637,7 @@
             this.coreStats_speedValue.AutoSize = true;
             this.coreStats_speedValue.Dock = System.Windows.Forms.DockStyle.Fill;
             this.coreStats_speedValue.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.coreStats_speedValue.Location = new System.Drawing.Point(125, 0);
+            this.coreStats_speedValue.Location = new System.Drawing.Point(124, 0);
             this.coreStats_speedValue.Name = "coreStats_speedValue";
             this.coreStats_speedValue.Size = new System.Drawing.Size(39, 26);
             this.coreStats_speedValue.TabIndex = 1;
@@ -646,9 +647,9 @@
             // coreStats_speedImage
             // 
             this.coreStats_speedImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.coreStats_speedImage.Location = new System.Drawing.Point(170, 3);
+            this.coreStats_speedImage.Location = new System.Drawing.Point(169, 3);
             this.coreStats_speedImage.Name = "coreStats_speedImage";
-            this.coreStats_speedImage.Size = new System.Drawing.Size(19, 20);
+            this.coreStats_speedImage.Size = new System.Drawing.Size(20, 20);
             this.coreStats_speedImage.TabIndex = 2;
             this.coreStats_speedImage.TabStop = false;
             // 
@@ -657,7 +658,7 @@
             this.coreStats_accuracy.ColumnCount = 3;
             this.coreStats_accuracy.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.coreStats_accuracy.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.coreStats_accuracy.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.coreStats_accuracy.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.coreStats_accuracy.Controls.Add(this.coreStats_accuracyLabel, 0, 0);
             this.coreStats_accuracy.Controls.Add(this.coreStats_accuracyValue, 1, 0);
             this.coreStats_accuracy.Controls.Add(this.coreStats_accuracyImage, 2, 0);
@@ -675,7 +676,7 @@
             this.coreStats_accuracyLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.coreStats_accuracyLabel.Location = new System.Drawing.Point(3, 0);
             this.coreStats_accuracyLabel.Name = "coreStats_accuracyLabel";
-            this.coreStats_accuracyLabel.Size = new System.Drawing.Size(116, 26);
+            this.coreStats_accuracyLabel.Size = new System.Drawing.Size(115, 26);
             this.coreStats_accuracyLabel.TabIndex = 0;
             this.coreStats_accuracyLabel.Text = "Accuracy:";
             this.coreStats_accuracyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -685,7 +686,7 @@
             this.coreStats_accuracyValue.AutoSize = true;
             this.coreStats_accuracyValue.Dock = System.Windows.Forms.DockStyle.Fill;
             this.coreStats_accuracyValue.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.coreStats_accuracyValue.Location = new System.Drawing.Point(125, 0);
+            this.coreStats_accuracyValue.Location = new System.Drawing.Point(124, 0);
             this.coreStats_accuracyValue.Name = "coreStats_accuracyValue";
             this.coreStats_accuracyValue.Size = new System.Drawing.Size(39, 26);
             this.coreStats_accuracyValue.TabIndex = 1;
@@ -695,9 +696,9 @@
             // coreStats_accuracyImage
             // 
             this.coreStats_accuracyImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.coreStats_accuracyImage.Location = new System.Drawing.Point(170, 3);
+            this.coreStats_accuracyImage.Location = new System.Drawing.Point(169, 3);
             this.coreStats_accuracyImage.Name = "coreStats_accuracyImage";
-            this.coreStats_accuracyImage.Size = new System.Drawing.Size(19, 20);
+            this.coreStats_accuracyImage.Size = new System.Drawing.Size(20, 20);
             this.coreStats_accuracyImage.TabIndex = 2;
             this.coreStats_accuracyImage.TabStop = false;
             // 
@@ -706,7 +707,7 @@
             this.coreStats_corruption.ColumnCount = 3;
             this.coreStats_corruption.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.coreStats_corruption.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.coreStats_corruption.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.coreStats_corruption.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.coreStats_corruption.Controls.Add(this.coreStats_corruptionLabel, 0, 0);
             this.coreStats_corruption.Controls.Add(this.coreStats_corruptionValue, 1, 0);
             this.coreStats_corruption.Controls.Add(this.coreStats_corruptionImage, 2, 0);
@@ -724,7 +725,7 @@
             this.coreStats_corruptionLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.coreStats_corruptionLabel.Location = new System.Drawing.Point(3, 0);
             this.coreStats_corruptionLabel.Name = "coreStats_corruptionLabel";
-            this.coreStats_corruptionLabel.Size = new System.Drawing.Size(116, 26);
+            this.coreStats_corruptionLabel.Size = new System.Drawing.Size(115, 26);
             this.coreStats_corruptionLabel.TabIndex = 0;
             this.coreStats_corruptionLabel.Text = "Corruption:";
             this.coreStats_corruptionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -734,7 +735,7 @@
             this.coreStats_corruptionValue.AutoSize = true;
             this.coreStats_corruptionValue.Dock = System.Windows.Forms.DockStyle.Fill;
             this.coreStats_corruptionValue.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.coreStats_corruptionValue.Location = new System.Drawing.Point(125, 0);
+            this.coreStats_corruptionValue.Location = new System.Drawing.Point(124, 0);
             this.coreStats_corruptionValue.Name = "coreStats_corruptionValue";
             this.coreStats_corruptionValue.Size = new System.Drawing.Size(39, 26);
             this.coreStats_corruptionValue.TabIndex = 1;
@@ -744,9 +745,9 @@
             // coreStats_corruptionImage
             // 
             this.coreStats_corruptionImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.coreStats_corruptionImage.Location = new System.Drawing.Point(170, 3);
+            this.coreStats_corruptionImage.Location = new System.Drawing.Point(169, 3);
             this.coreStats_corruptionImage.Name = "coreStats_corruptionImage";
-            this.coreStats_corruptionImage.Size = new System.Drawing.Size(19, 20);
+            this.coreStats_corruptionImage.Size = new System.Drawing.Size(20, 20);
             this.coreStats_corruptionImage.TabIndex = 2;
             this.coreStats_corruptionImage.TabStop = false;
             // 
@@ -765,7 +766,7 @@
             this.combatStats_hp.ColumnCount = 3;
             this.combatStats_hp.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.combatStats_hp.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.combatStats_hp.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.combatStats_hp.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.combatStats_hp.Controls.Add(this.combatStats_hpLabel, 0, 0);
             this.combatStats_hp.Controls.Add(this.combatStats_hpValue, 1, 0);
             this.combatStats_hp.Controls.Add(this.combatStats_hpImage, 2, 0);
@@ -783,7 +784,7 @@
             this.combatStats_hpLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combatStats_hpLabel.Location = new System.Drawing.Point(3, 0);
             this.combatStats_hpLabel.Name = "combatStats_hpLabel";
-            this.combatStats_hpLabel.Size = new System.Drawing.Size(116, 26);
+            this.combatStats_hpLabel.Size = new System.Drawing.Size(115, 26);
             this.combatStats_hpLabel.TabIndex = 0;
             this.combatStats_hpLabel.Text = "Health:";
             this.combatStats_hpLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -793,7 +794,7 @@
             this.combatStats_hpValue.AutoSize = true;
             this.combatStats_hpValue.Dock = System.Windows.Forms.DockStyle.Fill;
             this.combatStats_hpValue.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.combatStats_hpValue.Location = new System.Drawing.Point(125, 0);
+            this.combatStats_hpValue.Location = new System.Drawing.Point(124, 0);
             this.combatStats_hpValue.Name = "combatStats_hpValue";
             this.combatStats_hpValue.Size = new System.Drawing.Size(39, 26);
             this.combatStats_hpValue.TabIndex = 1;
@@ -803,9 +804,9 @@
             // combatStats_hpImage
             // 
             this.combatStats_hpImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.combatStats_hpImage.Location = new System.Drawing.Point(170, 3);
+            this.combatStats_hpImage.Location = new System.Drawing.Point(169, 3);
             this.combatStats_hpImage.Name = "combatStats_hpImage";
-            this.combatStats_hpImage.Size = new System.Drawing.Size(19, 20);
+            this.combatStats_hpImage.Size = new System.Drawing.Size(20, 20);
             this.combatStats_hpImage.TabIndex = 2;
             this.combatStats_hpImage.TabStop = false;
             // 
@@ -814,7 +815,7 @@
             this.combatStats_fatigue.ColumnCount = 3;
             this.combatStats_fatigue.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.combatStats_fatigue.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.combatStats_fatigue.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.combatStats_fatigue.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.combatStats_fatigue.Controls.Add(this.combatStats_fatigueLabel, 0, 0);
             this.combatStats_fatigue.Controls.Add(this.combatStats_fatigueValue, 1, 0);
             this.combatStats_fatigue.Controls.Add(this.combatStats_fatigueImage, 2, 0);
@@ -832,7 +833,7 @@
             this.combatStats_fatigueLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combatStats_fatigueLabel.Location = new System.Drawing.Point(3, 0);
             this.combatStats_fatigueLabel.Name = "combatStats_fatigueLabel";
-            this.combatStats_fatigueLabel.Size = new System.Drawing.Size(116, 26);
+            this.combatStats_fatigueLabel.Size = new System.Drawing.Size(115, 26);
             this.combatStats_fatigueLabel.TabIndex = 0;
             this.combatStats_fatigueLabel.Text = "Fatigue:";
             this.combatStats_fatigueLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -842,7 +843,7 @@
             this.combatStats_fatigueValue.AutoSize = true;
             this.combatStats_fatigueValue.Dock = System.Windows.Forms.DockStyle.Fill;
             this.combatStats_fatigueValue.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.combatStats_fatigueValue.Location = new System.Drawing.Point(125, 0);
+            this.combatStats_fatigueValue.Location = new System.Drawing.Point(124, 0);
             this.combatStats_fatigueValue.Name = "combatStats_fatigueValue";
             this.combatStats_fatigueValue.Size = new System.Drawing.Size(39, 26);
             this.combatStats_fatigueValue.TabIndex = 1;
@@ -852,9 +853,9 @@
             // combatStats_fatigueImage
             // 
             this.combatStats_fatigueImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.combatStats_fatigueImage.Location = new System.Drawing.Point(170, 3);
+            this.combatStats_fatigueImage.Location = new System.Drawing.Point(169, 3);
             this.combatStats_fatigueImage.Name = "combatStats_fatigueImage";
-            this.combatStats_fatigueImage.Size = new System.Drawing.Size(19, 20);
+            this.combatStats_fatigueImage.Size = new System.Drawing.Size(20, 20);
             this.combatStats_fatigueImage.TabIndex = 2;
             this.combatStats_fatigueImage.TabStop = false;
             // 
@@ -873,7 +874,7 @@
             this.advancementStats_level.ColumnCount = 3;
             this.advancementStats_level.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.advancementStats_level.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.advancementStats_level.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.advancementStats_level.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.advancementStats_level.Controls.Add(this.advancementStats_levelLabel, 0, 0);
             this.advancementStats_level.Controls.Add(this.advancementStats_levelValue, 1, 0);
             this.advancementStats_level.Controls.Add(this.advancementStats_levelImage, 2, 0);
@@ -891,7 +892,7 @@
             this.advancementStats_levelLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.advancementStats_levelLabel.Location = new System.Drawing.Point(3, 0);
             this.advancementStats_levelLabel.Name = "advancementStats_levelLabel";
-            this.advancementStats_levelLabel.Size = new System.Drawing.Size(116, 26);
+            this.advancementStats_levelLabel.Size = new System.Drawing.Size(115, 26);
             this.advancementStats_levelLabel.TabIndex = 0;
             this.advancementStats_levelLabel.Text = "Level:";
             this.advancementStats_levelLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -901,7 +902,7 @@
             this.advancementStats_levelValue.AutoSize = true;
             this.advancementStats_levelValue.Dock = System.Windows.Forms.DockStyle.Fill;
             this.advancementStats_levelValue.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.advancementStats_levelValue.Location = new System.Drawing.Point(125, 0);
+            this.advancementStats_levelValue.Location = new System.Drawing.Point(124, 0);
             this.advancementStats_levelValue.Name = "advancementStats_levelValue";
             this.advancementStats_levelValue.Size = new System.Drawing.Size(39, 26);
             this.advancementStats_levelValue.TabIndex = 1;
@@ -911,9 +912,9 @@
             // advancementStats_levelImage
             // 
             this.advancementStats_levelImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.advancementStats_levelImage.Location = new System.Drawing.Point(170, 3);
+            this.advancementStats_levelImage.Location = new System.Drawing.Point(169, 3);
             this.advancementStats_levelImage.Name = "advancementStats_levelImage";
-            this.advancementStats_levelImage.Size = new System.Drawing.Size(19, 20);
+            this.advancementStats_levelImage.Size = new System.Drawing.Size(20, 20);
             this.advancementStats_levelImage.TabIndex = 2;
             this.advancementStats_levelImage.TabStop = false;
             // 
@@ -922,7 +923,7 @@
             this.advancementStats_xp.ColumnCount = 3;
             this.advancementStats_xp.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.advancementStats_xp.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.advancementStats_xp.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.advancementStats_xp.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.advancementStats_xp.Controls.Add(this.advancementStats_xpLabel, 0, 0);
             this.advancementStats_xp.Controls.Add(this.advancementStats_xpValue, 1, 0);
             this.advancementStats_xp.Controls.Add(this.advancementStats_xpImage, 2, 0);
@@ -940,7 +941,7 @@
             this.advancementStats_xpLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.advancementStats_xpLabel.Location = new System.Drawing.Point(3, 0);
             this.advancementStats_xpLabel.Name = "advancementStats_xpLabel";
-            this.advancementStats_xpLabel.Size = new System.Drawing.Size(116, 26);
+            this.advancementStats_xpLabel.Size = new System.Drawing.Size(115, 26);
             this.advancementStats_xpLabel.TabIndex = 0;
             this.advancementStats_xpLabel.Text = "Experience:";
             this.advancementStats_xpLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -950,7 +951,7 @@
             this.advancementStats_xpValue.AutoSize = true;
             this.advancementStats_xpValue.Dock = System.Windows.Forms.DockStyle.Fill;
             this.advancementStats_xpValue.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.advancementStats_xpValue.Location = new System.Drawing.Point(125, 0);
+            this.advancementStats_xpValue.Location = new System.Drawing.Point(124, 0);
             this.advancementStats_xpValue.Name = "advancementStats_xpValue";
             this.advancementStats_xpValue.Size = new System.Drawing.Size(39, 26);
             this.advancementStats_xpValue.TabIndex = 1;
@@ -960,9 +961,9 @@
             // advancementStats_xpImage
             // 
             this.advancementStats_xpImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.advancementStats_xpImage.Location = new System.Drawing.Point(170, 3);
+            this.advancementStats_xpImage.Location = new System.Drawing.Point(169, 3);
             this.advancementStats_xpImage.Name = "advancementStats_xpImage";
-            this.advancementStats_xpImage.Size = new System.Drawing.Size(19, 20);
+            this.advancementStats_xpImage.Size = new System.Drawing.Size(20, 20);
             this.advancementStats_xpImage.TabIndex = 2;
             this.advancementStats_xpImage.TabStop = false;
             // 
@@ -971,7 +972,7 @@
             this.advancementStats_gold.ColumnCount = 3;
             this.advancementStats_gold.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.advancementStats_gold.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.advancementStats_gold.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.advancementStats_gold.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.advancementStats_gold.Controls.Add(this.advancementStats_goldLabel, 0, 0);
             this.advancementStats_gold.Controls.Add(this.advancementStats_goldValue, 1, 0);
             this.advancementStats_gold.Controls.Add(this.advancementStats_goldImage, 2, 0);
@@ -989,7 +990,7 @@
             this.advancementStats_goldLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.advancementStats_goldLabel.Location = new System.Drawing.Point(3, 0);
             this.advancementStats_goldLabel.Name = "advancementStats_goldLabel";
-            this.advancementStats_goldLabel.Size = new System.Drawing.Size(116, 26);
+            this.advancementStats_goldLabel.Size = new System.Drawing.Size(115, 26);
             this.advancementStats_goldLabel.TabIndex = 0;
             this.advancementStats_goldLabel.Text = "Gold:";
             this.advancementStats_goldLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -999,7 +1000,7 @@
             this.advancementStats_goldValue.AutoSize = true;
             this.advancementStats_goldValue.Dock = System.Windows.Forms.DockStyle.Fill;
             this.advancementStats_goldValue.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.advancementStats_goldValue.Location = new System.Drawing.Point(125, 0);
+            this.advancementStats_goldValue.Location = new System.Drawing.Point(124, 0);
             this.advancementStats_goldValue.Name = "advancementStats_goldValue";
             this.advancementStats_goldValue.Size = new System.Drawing.Size(39, 26);
             this.advancementStats_goldValue.TabIndex = 1;
@@ -1009,9 +1010,9 @@
             // advancementStats_goldImage
             // 
             this.advancementStats_goldImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.advancementStats_goldImage.Location = new System.Drawing.Point(170, 3);
+            this.advancementStats_goldImage.Location = new System.Drawing.Point(169, 3);
             this.advancementStats_goldImage.Name = "advancementStats_goldImage";
-            this.advancementStats_goldImage.Size = new System.Drawing.Size(19, 20);
+            this.advancementStats_goldImage.Size = new System.Drawing.Size(20, 20);
             this.advancementStats_goldImage.TabIndex = 2;
             this.advancementStats_goldImage.TabStop = false;
             // 

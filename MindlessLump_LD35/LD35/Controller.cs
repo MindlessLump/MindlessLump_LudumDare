@@ -11,10 +11,10 @@ namespace LD35
     class Controller
     {
         private static IView window;
-        private static string[] coreStatInfo = { "", "", "", "", "", "", "", "", "", "" };
-        private static string[] combatStatInfo = { "", "", "", "" };
-        private static string[] advancementStatInfo = { "", "", "", "", "", "" };
-        private static string[] dateTimeInfo = { "", "" };
+        private static string[] coreStatInfo = { "0", "", "0", "", "0", "", "0", "", "0", "" };
+        private static string[] combatStatInfo = { "0", "", "0", "" };
+        private static string[] advancementStatInfo = { "0", "", "0", "", "0", "" };
+        private static string[] dateTimeInfo = { "0", "0" };
         private static string[] buttonInfo = { "", "", "", "", "", "", "", "", "", "" };
         private static string[] buttonDest = { "", "", "", "", "", "", "", "", "", "" };
         private static bool autosaveOn = false;
@@ -198,9 +198,14 @@ namespace LD35
             int fileSection = 0;
             int buttonNum = -1;
             int parseLine = -1;
+            bool coreChanged = false;
+            bool combatChanged = false;
+            bool advancementChanged = false;
+            bool dateTimeChanged = false;
+            bool buttonsChanged = false;
             foreach (string s in File.ReadLines("../../Files/" + file))
             {
-                // HTML section (the part that displays)
+                // HTML section (the part that displays text)
                 if (fileSection == 0)
                 {
                     if (s.Contains("<button"))
@@ -256,9 +261,10 @@ namespace LD35
                     {
                         parseLine = -1;
                     }
-                    else if (s.Contains("<stats>"))
+                    else if (s.Contains("Stats>"))
                     {
                         fileSection = 2;
+                        parseLine = 0;
                     }
                     else
                     {
@@ -277,18 +283,93 @@ namespace LD35
                             throw new IOException("File not parsing correctly.");
                         }
                     }
+                    buttonsChanged = true;
                 }
                 // Stat section (changes)
                 else if (fileSection == 2)
                 {
-                    // TODO parse stat changes
+                    if (s.Contains("<coreStats>"))
+                    {
+                        parseLine = 0;
+                    }
+                    else if (s.Contains("<combatStats>"))
+                    {
+                        parseLine = 1;
+                    }
+                    else if (s.Contains("<advancementStats>"))
+                    {
+                        parseLine = 2;
+                    }
+                    else if (s.Contains("<dateTimeStats>"))
+                    {
+                        parseLine = 3;
+                    }
+                    else if (s.Contains("<hiddenStats>"))
+                    {
+                        parseLine = 4;
+                    }
+                    else if (s.Contains("</"))
+                    {
+                        parseLine = -1;
+                    }
+                    else
+                    {
+                        if (parseLine == 0)
+                        {
+                            string[] data = s.Trim().Split(':');
+                            int statNum = -1;
+                            switch (data[0])
+                            {
+                                case "Strength":
+                                    statNum = 0;
+                                    break;
+                                case "Toughness":
+                                    statNum = 2;
+                                    break;
+                                case "Speed":
+                                    statNum = 4;
+                                    break;
+                                case "Accuracy":
+                                    statNum = 6;
+                                    break;
+                                case "Corruption":
+                                    statNum = 8;
+                                    break;
+                            }
+                            int change = int.Parse(data[1]);
+                            coreStatInfo[statNum] = (int.Parse(coreStatInfo[statNum]) + change).ToString();
+                            if (change < 0)
+                            {
+                                coreStatInfo[statNum + 1] = "../../Files/down.bmp";
+                            }
+                            else
+                            {
+                                coreStatInfo[statNum + 1] = "../../Files/up.bmp";
+                            }
+                        }
+                    }
                 }
             }
-            window.UpdateCoreStats(coreStatInfo);
-            window.UpdateCombatStats(combatStatInfo);
-            window.UpdateAdvancementStats(advancementStatInfo);
-            window.UpdateGameDateTime(dateTimeInfo);
-            window.UpdateButtonText(buttonInfo);
+            if (coreChanged)
+            {
+                window.UpdateCoreStats(coreStatInfo);
+            }
+            if (combatChanged)
+            {
+                window.UpdateCombatStats(combatStatInfo);
+            }
+            if (advancementChanged)
+            {
+                window.UpdateAdvancementStats(advancementStatInfo);
+            }
+            if (dateTimeChanged)
+            {
+                window.UpdateGameDateTime(dateTimeInfo);
+            }
+            if (buttonsChanged)
+            {
+                window.UpdateButtonText(buttonInfo);
+            }
             return builder.ToString();
         }
 
