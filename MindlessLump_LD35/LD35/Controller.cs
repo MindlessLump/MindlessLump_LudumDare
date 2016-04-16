@@ -270,6 +270,7 @@ namespace LD35
                         else if (parseLine == 1)
                         {
                             buttonDest[buttonNum] = s.Trim();
+                            parseLine = 2;
                         }
                         else
                         {
@@ -283,6 +284,11 @@ namespace LD35
                     // TODO parse stat changes
                 }
             }
+            window.UpdateCoreStats(coreStatInfo);
+            window.UpdateCombatStats(combatStatInfo);
+            window.UpdateAdvancementStats(advancementStatInfo);
+            window.UpdateGameDateTime(dateTimeInfo);
+            window.UpdateButtonText(buttonInfo);
             return builder.ToString();
         }
 

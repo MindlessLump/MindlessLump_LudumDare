@@ -73,27 +73,94 @@ namespace LD35
 
         public void UpdateCoreStats(string[] newInfo)
         {
-            // TODO
+            if (newInfo == null)
+            {
+                throw new ArgumentNullException();
+            }
+            if (newInfo.Length != 10)
+            {
+                throw new ArgumentException("String array wrong size.");
+            }
+            coreStats_strengthValue.Text = newInfo[0];
+            coreStats_strengthImage.ImageLocation = newInfo[1];
+            coreStats_toughnessValue.Text = newInfo[2];
+            coreStats_toughnessImage.ImageLocation = newInfo[3];
+            coreStats_speedValue.Text = newInfo[4];
+            coreStats_speedImage.ImageLocation = newInfo[5];
+            coreStats_accuracyValue.Text = newInfo[6];
+            coreStats_accuracyImage.ImageLocation = newInfo[7];
+            coreStats_corruptionValue.Text = newInfo[8];
+            coreStats_corruptionImage.ImageLocation = newInfo[9];
         }
 
         public void UpdateCombatStats(string[] newInfo)
         {
-            // TODO
+            if (newInfo == null)
+            {
+                throw new ArgumentNullException();
+            }
+            if (newInfo.Length != 4)
+            {
+                throw new ArgumentException("String array wrong size.");
+            }
+            combatStats_hpValue.Text = newInfo[0];
+            combatStats_hpImage.ImageLocation = newInfo[1];
+            combatStats_fatigueValue.Text = newInfo[2];
+            combatStats_fatigueImage.ImageLocation = newInfo[3];
         }
 
         public void UpdateAdvancementStats(string[] newInfo)
         {
-            // TODO
+            if (newInfo == null)
+            {
+                throw new ArgumentNullException();
+            }
+            if (newInfo.Length != 6)
+            {
+                throw new ArgumentException("String array wrong size.");
+            }
+            advancementStats_levelValue.Text = newInfo[0];
+            advancementStats_levelImage.ImageLocation = newInfo[1];
+            advancementStats_xpValue.Text = newInfo[2];
+            advancementStats_xpImage.ImageLocation = newInfo[3];
+            advancementStats_goldValue.Text = newInfo[4];
+            advancementStats_goldImage.ImageLocation = newInfo[5];
         }
 
         public void UpdateButtonText(string[] newInfo)
         {
-            // TODO
+            if (newInfo == null)
+            {
+                throw new ArgumentNullException();
+            }
+            if (newInfo.Length != 10)
+            {
+                throw new ArgumentException("String array wrong size.");
+            }
+            button1.Text = newInfo[0];
+            button2.Text = newInfo[1];
+            button3.Text = newInfo[2];
+            button4.Text = newInfo[3];
+            button5.Text = newInfo[4];
+            button6.Text = newInfo[5];
+            button7.Text = newInfo[6];
+            button8.Text = newInfo[7];
+            button9.Text = newInfo[8];
+            button10.Text = newInfo[9];
         }
 
         public void UpdateGameDateTime(string[] newInfo)
         {
-            // TODO
+            if (newInfo == null)
+            {
+                throw new ArgumentNullException();
+            }
+            if (newInfo.Length != 2)
+            {
+                throw new ArgumentException("String array wrong size.");
+            }
+            dateLabel.Text = newInfo[0];
+            timeLabel.Text = newInfo[1];
         }
 
         public string GetSaveFile()
@@ -207,7 +274,7 @@ namespace LD35
 
         private void button10_Click(object sender, EventArgs e)
         {
-
+            Button10Event?.Invoke();
         }
 
         private void MindlessLump_LD35_KeyDown(object sender, KeyEventArgs e)
