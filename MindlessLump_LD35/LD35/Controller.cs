@@ -19,6 +19,7 @@ namespace LD35
         private static string[] buttonDest = { "", "", "", "", "", "", "", "", "", "" };
         private static bool autosaveOn = false;
         private static string previousFile = "";
+        private static string currLoc = "";
 
         public Controller (IView w)
         {
@@ -89,7 +90,10 @@ namespace LD35
 
         private void HelpEventHandler()
         {
-            // TODO
+            string prevLoc = currLoc;
+            window.MainText = GetStringFromFile("main.html");
+            buttonInfo[0] = "Next";
+            buttonDest[0] = prevLoc;
         }
 
         private void ToggleAutosaveEventHandler()
@@ -107,57 +111,88 @@ namespace LD35
 
         private void Button1EventHandler()
         {
-            // TODO
+            if (buttonDest[0] != "")
+            {
+                window.MainText = GetStringFromFile(buttonDest[0]);
+            }
         }
 
         private void Button2EventHandler()
         {
-            // TODO
+            if (buttonDest[1] != "")
+            {
+                window.MainText = GetStringFromFile(buttonDest[1]);
+            }
         }
 
         private void Button3EventHandler()
         {
-            // TODO
+            if (buttonDest[2] != "")
+            {
+                window.MainText = GetStringFromFile(buttonDest[2]);
+            }
         }
 
         private void Button4EventHandler()
         {
-            // TODO
+            if (buttonDest[3] != "")
+            {
+                window.MainText = GetStringFromFile(buttonDest[3]);
+            }
         }
 
         private void Button5EventHandler()
         {
-            // TODO
+            if (buttonDest[4] != "")
+            {
+                window.MainText = GetStringFromFile(buttonDest[4]);
+            }
         }
 
         private void Button6EventHandler()
         {
-            // TODO
+            if (buttonDest[5] != "")
+            {
+                window.MainText = GetStringFromFile(buttonDest[5]);
+            }
         }
 
         private void Button7EventHandler()
         {
-            // TODO
+            if (buttonDest[6] != "")
+            {
+                window.MainText = GetStringFromFile(buttonDest[6]);
+            }
         }
 
         private void Button8EventHandler()
         {
-            // TODO
+            if (buttonDest[7] != "")
+            {
+                window.MainText = GetStringFromFile(buttonDest[7]);
+            }
         }
 
         private void Button9EventHandler()
         {
-            // TODO
+            if (buttonDest[8] != "")
+            {
+                window.MainText = GetStringFromFile(buttonDest[8]);
+            }
         }
 
         private void Button10EventHandler()
         {
-            // TODO
+            if (buttonDest[9] != "")
+            {
+                window.MainText = GetStringFromFile(buttonDest[9]);
+            }
         }
 
         public string GetStringFromFile(string file)
         {
             StringBuilder build = new StringBuilder();
+            currLoc = file;
             int fileSection = 0;
             int buttonNum = -1;
             int parseLine = -1;
