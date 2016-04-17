@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LD35
 {
+    /// <summary>
+    /// GUI class representation for my LD35 game.
+    /// </summary>
     public partial class MindlessLump_LD35 : Form, IView
     {
         public event Action<string> SaveEvent;

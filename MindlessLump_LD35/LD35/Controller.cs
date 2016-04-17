@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LD35
@@ -115,6 +112,10 @@ namespace LD35
         {
             if (buttonDest[0] != "")
             {
+                if (buttonDest[0] == "loc01_01.html")
+                {
+
+                }
                 window.MainText = GetStringFromFile(buttonDest[0]);
             }
         }
